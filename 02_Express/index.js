@@ -1,8 +1,9 @@
+import 'dotenv/config'
 import express from 'express'
 
 const app = express()
 
-const port = 3000
+const port = process.env.PORT||3000
 
 // app.get('/', (req, res) => {
 //     res.send('Hello from pritam Dutta ! ')
@@ -61,6 +62,7 @@ app.delete('/teas/id:',(req,res)=>{
     if(index===-1){
         return res.status(404).send('tea is not found')
     }
+
     myData.splice(index,1)
 })
 
